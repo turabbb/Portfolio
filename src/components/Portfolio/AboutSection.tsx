@@ -79,7 +79,7 @@ const AboutSection = () => {
               variants={itemVariants}
               className="text-lg text-muted-foreground leading-relaxed"
             >
-              I'm a passionate Computer Science student at COMSATS University, specializing in 
+              I'm a passionate Software Engineering student at COMSATS University, specializing in 
               scalable web applications and AI engineering. With a strong foundation in both 
               frontend and backend technologies, I love creating innovative solutions that 
               bridge the gap between cutting-edge AI and practical web development.
@@ -89,8 +89,11 @@ const AboutSection = () => {
               variants={itemVariants}
               className="text-lg text-muted-foreground leading-relaxed"
             >
-              My journey spans from developing financial RAG assistants to building comprehensive 
-              e-commerce platforms. I'm constantly exploring new technologies and methodologies 
+              My journey spans from building comprehensive e-commerce platforms to AI & Automation.
+              Recently, I've focused on creating intelligent systems that combine real-world data with 
+              advanced models to deliver practical, personalized results - whether it's financial guidance, 
+              predictive models, or automation tools.
+              I'm constantly exploring new technologies and methodologies 
               to solve complex problems and deliver exceptional user experiences.
             </motion.p>
 
