@@ -10,7 +10,7 @@ const ExperienceSection = () => {
 
   const experiences = [
     {
-      title: 'Software Development Intern',
+      title: 'AI/ML Intern',
       company: 'NETSOL Technologies',
       duration: '2 months',
       description: 'Worked on enterprise software solutions, contributing to large-scale applications and learning industry best practices.',
@@ -19,10 +19,10 @@ const ExperienceSection = () => {
       bgColor: 'bg-primary/10',
     },
     {
-      title: 'Customer Service Representative',
-      company: 'Ibex',
-      duration: '3 months',
-      description: 'Developed strong communication skills while handling customer inquiries and providing technical support solutions.',
+      title: 'Full Stack AI Engineer',
+      company: 'Fiverr',
+      duration: '1.5 years',
+      description: 'Delivered client-focused AI and SaaS solutions including custom AI agents, production-grade RAG pipelines, model fine-tuning, and research-driven implementations for real-world business workflows.',
       icon: Users,
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',
@@ -61,7 +61,7 @@ const ExperienceSection = () => {
   };
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-background/80 to-muted/20">
+    <section id="experience" className="section-shell bg-gradient-to-b from-background/80 to-muted/20">
       <div className="container mx-auto px-8 sm:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[95vw]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -69,13 +69,13 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">
+          <h2 className="section-title">
             Experience
           </h2>
           <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-            My professional journey showcases diverse experiences across technology, 
-            customer service, and international business development.
+          <p className="section-subtitle">
+            My journey blends product engineering, AI research, and real-world delivery — 
+            from enterprise software to freelance SaaS and intelligent automation systems.
           </p>
         </motion.div>
 
@@ -111,7 +111,7 @@ const ExperienceSection = () => {
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="glass p-6 rounded-lg border-neon hover-lift group">
+                  <div className="glass-card p-6 hover-lift group">
                     <div className="flex items-start space-x-4">
                       <div className={`p-3 rounded-lg ${exp.bgColor} group-hover:scale-110 transition-transform duration-300`}>
                         <exp.icon className={`w-6 h-6 ${exp.color}`} />

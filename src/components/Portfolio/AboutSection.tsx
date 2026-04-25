@@ -43,14 +43,14 @@ const AboutSection = () => {
   };
 
   const stats = [
-    { icon: GraduationCap, label: 'Education', value: 'COMSATS University' },
+    { icon: GraduationCap, label: 'Experience', value: '2+ Years' },
     { icon: MapPin, label: 'Location', value: 'Lahore, Pakistan' },
-    { icon: Code, label: 'Specialization', value: 'Full Stack Development' },
-    { icon: Brain, label: 'Focus', value: 'AI Engineering' },
+    { icon: Code, label: 'Specialization', value: 'Full Stack AI Engineering' },
+    { icon: Brain, label: 'Core Focus', value: 'AI-Powered Systems' },
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-background to-background/80">
+    <section id="about" className="section-shell bg-gradient-to-b from-background to-background/80">
       <div className="container mx-auto px-8 sm:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[95vw]">
         <motion.div
           ref={ref}
@@ -64,7 +64,7 @@ const AboutSection = () => {
             <div className="space-y-4">
               <motion.h2
                 variants={itemVariants}
-                className="text-4xl md:text-5xl font-display font-bold text-gradient"
+                className="section-title"
               >
                 About Me
               </motion.h2>
@@ -79,22 +79,20 @@ const AboutSection = () => {
               variants={itemVariants}
               className="text-lg text-muted-foreground leading-relaxed"
             >
-              I'm a passionate Software Engineering student at COMSATS University, specializing in 
-              scalable web applications and AI engineering. With a strong foundation in both 
-              frontend and backend technologies, I love creating innovative solutions that 
-              bridge the gap between cutting-edge AI and practical web development.
+              I'm a Full Stack AI Engineer with 2+ years of hands-on experience building 
+              scalable web applications and intelligent systems. With strong expertise across 
+              frontend and backend technologies, I design and deliver production-ready solutions 
+              that connect modern AI capabilities with practical business outcomes.
             </motion.p>
 
             <motion.p
               variants={itemVariants}
               className="text-lg text-muted-foreground leading-relaxed"
             >
-              My journey spans from building comprehensive e-commerce platforms to AI & Automation.
-              Recently, I've focused on creating intelligent systems that combine real-world data with 
-              advanced models to deliver practical, personalized results - whether it's financial guidance, 
-              predictive models, or automation tools.
-              I'm constantly exploring new technologies and methodologies 
-              to solve complex problems and deliver exceptional user experiences.
+              My work spans high-performance e-commerce platforms, AI assistants, and automation tools.
+              I focus on building robust products that combine real-world data, strong system design, and 
+              advanced models to deliver measurable impact, from financial intelligence and predictive 
+              workflows to computer vision and domain-specific AI applications.
             </motion.p>
 
             {/* Stats Grid */}
@@ -105,7 +103,7 @@ const AboutSection = () => {
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="glass p-4 rounded-lg border-neon hover-lift group"
+                  className="glass-card p-4 hover-lift group"
                   whileHover={{ scale: 1.02 }}
                 >
                   <stat.icon className="w-6 h-6 text-primary mb-2 group-hover:text-secondary transition-colors" />

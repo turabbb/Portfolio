@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { SlideTabs } from '@/components/ui/slide-tabs';
+
+const navItems = [
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'tools', label: 'Tools' },
+  { id: 'contact', label: 'Contact' },
+];
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'tools', label: 'Tools' },
-    { id: 'contact', label: 'Contact' }
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,47 +52,25 @@ const Navigation = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'backdrop-blur-md bg-background/80 border-b border-neon' 
-          : 'bg-transparent'
+          ? 'pt-3' 
+          : 'pt-5'
       }`}
     >
-      <div className="container mx-auto px-8 sm:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[95vw] py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-2xl font-display font-bold text-gradient cursor-pointer"
-            onClick={() => scrollToSection('home')}
-          >
-            AT
-          </motion.div>
-
+      <div className="px-4">
+        <div className="mx-auto w-fit">
+          <div className={`flex items-center justify-center gap-4 px-4 md:px-5 py-2.5 rounded-full transition-all duration-300 ${
+            isScrolled
+              ? 'bg-background/80 border border-border/60 shadow-neon backdrop-blur-xl'
+              : 'bg-background/55 border border-border/50 backdrop-blur-lg'
+          }`}>
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <motion.button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 ${
-                  activeSection === item.id
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {item.label}
-                {activeSection === item.id && (
-                  <motion.div
-                    layoutId="activeIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-primary rounded-full"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                )}
-              </motion.button>
-            ))}
+          <div className="hidden md:flex items-center">
+            <SlideTabs
+              tabs={navItems}
+              selectedId={activeSection}
+              onTabSelect={scrollToSection}
+              className="border-0 bg-transparent p-0 backdrop-blur-none"
+            />
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,6 +82,7 @@ const Navigation = () => {
             <div className="w-5 h-0.5 bg-foreground"></div>
             <div className="w-5 h-0.5 bg-foreground"></div>
           </motion.button>
+        </div>
         </div>
       </div>
     </motion.nav>

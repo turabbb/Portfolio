@@ -95,7 +95,7 @@ const ToolsSection = () => {
   );
 
   return (
-    <section id="tools" className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section id="tools" className="section-shell bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-8 sm:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[95vw]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -103,11 +103,11 @@ const ToolsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">
+          <h2 className="section-title">
             Tools & Technologies
           </h2>
           <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+          <p className="section-subtitle">
             A comprehensive toolkit spanning modern web development, artificial intelligence, 
             and cutting-edge technologies for building scalable solutions.
           </p>
@@ -159,7 +159,7 @@ const ToolsSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="glass p-6 rounded-lg border-neon hover-lift h-full">
+              <div className="glass-card p-6 hover-lift h-full">
                 <h3 className={`text-xl font-semibold mb-4 ${category.color} group-hover:text-gradient transition-all duration-300`}>
                   {category.title}
                 </h3>

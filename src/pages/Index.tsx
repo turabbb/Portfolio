@@ -9,7 +9,7 @@ import Footer from '@/components/Portfolio/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative z-10">
       <Navigation />
       <main className="flex-1">
         <HeroSection />

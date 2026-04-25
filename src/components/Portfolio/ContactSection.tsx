@@ -68,7 +68,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-muted/20 to-background relative overflow-hidden">
+    <section id="contact" className="section-shell bg-gradient-to-b from-muted/20 to-background relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-32 h-32 border-2 border-primary rounded-full animate-pulse" />
@@ -83,11 +83,11 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">
+          <h2 className="section-title">
             Let's Connect
           </h2>
           <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+          <p className="section-subtitle">
             Ready to collaborate on exciting projects or discuss opportunities? 
             I'm always open to new challenges and innovative ideas.
           </p>
@@ -107,7 +107,7 @@ const ContactSection = () => {
                 <motion.a
                   key={index}
                   href={item.href}
-                  className="flex items-center space-x-4 p-4 glass rounded-lg border-neon hover-lift group transition-all duration-300"
+                  className="flex items-center space-x-4 p-4 glass-card hover-lift group transition-all duration-300"
                   whileHover={{ scale: 1.02, x: 10 }}
                   variants={itemVariants}
                 >
@@ -132,7 +132,7 @@ const ContactSection = () => {
                   <motion.a
                     key={index}
                     href={social.href}
-                    className={`p-3 glass rounded-lg border-neon hover-lift group transition-all duration-300 ${social.color}`}
+                    className={`p-3 glass-card hover-lift group transition-all duration-300 ${social.color}`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.95 }}
                   >

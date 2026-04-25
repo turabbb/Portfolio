@@ -8,48 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Smooth & Elegant Portfolio Design System */
-    --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Monochrome-First Portfolio Design System */
+    --background: 222 12% 7%;
+    --foreground: 220 18% 96%;
 
-    --card: 220 25% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 224 10% 10%;
+    --card-foreground: 220 18% 96%;
 
-    --popover: 220 25% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 224 10% 10%;
+    --popover-foreground: 220 18% 96%;
 
-    --primary: 210 40% 70%;
-    --primary-foreground: 222 84% 4.9%;
+    --primary: 0 0% 94%;
+    --primary-foreground: 222 12% 7%;
 
-    --secondary: 280 30% 75%;
-    --secondary-foreground: 222 84% 4.9%;
+    --secondary: 220 10% 78%;
+    --secondary-foreground: 222 12% 7%;
 
-    --muted: 220 20% 12%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 8% 14%;
+    --muted-foreground: 220 9% 67%;
 
-    --accent: 200 50% 80%;
-    --accent-foreground: 222 84% 4.9%;
+    --accent: 198 54% 73%;
+    --accent-foreground: 222 12% 7%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 14%;
-    --ring: 210 40% 70%;
+    --border: 220 9% 24%;
+    --input: 220 8% 16%;
+    --ring: 0 0% 94%;
 
     --radius: 0.75rem;
 
-    /* Smooth Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(210 40% 70%), hsl(280 30% 75%));
-    --gradient-secondary: linear-gradient(135deg, hsl(280 30% 75%), hsl(200 50% 80%));
-    --gradient-accent: linear-gradient(135deg, hsl(200 50% 80%), hsl(210 40% 70%));
-    --gradient-glow: linear-gradient(135deg, hsl(210 40% 70% / 0.08), hsl(280 30% 75% / 0.08));
+    /* Smooth monochrome gradients with subtle color hints */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 98%), hsl(220 10% 76%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 10% 76%), hsl(198 54% 73%));
+    --gradient-accent: linear-gradient(135deg, hsl(198 54% 73%), hsl(0 0% 98%));
+    --gradient-glow: linear-gradient(135deg, hsl(0 0% 98% / 0.08), hsl(198 54% 73% / 0.08));
 
-    /* Subtle Shadows & Effects */
-    --shadow-neon: 0 0 20px hsl(210 40% 70% / 0.25);
-    --shadow-neon-purple: 0 0 20px hsl(280 30% 75% / 0.25);
-    --shadow-neon-teal: 0 0 20px hsl(200 50% 80% / 0.25);
-    --shadow-elegant: 0 25px 50px -12px hsl(222 84% 4.9% / 0.6);
+    /* Shadows & Effects */
+    --shadow-neon: 0 0 24px hsl(0 0% 98% / 0.16);
+    --shadow-neon-purple: 0 0 24px hsl(220 10% 76% / 0.2);
+    --shadow-neon-teal: 0 0 24px hsl(198 54% 73% / 0.2);
+    --shadow-elegant: 0 24px 60px -20px hsl(222 20% 3% / 0.75);
 
     /* Smooth Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -64,12 +64,31 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans overflow-x-hidden;
-    background: linear-gradient(135deg, hsl(222 84% 4.9%), hsl(220 25% 8%));
+    background:
+      radial-gradient(circle at 10% 20%, hsl(0 0% 100% / 0.06), transparent 35%),
+      radial-gradient(circle at 85% 30%, hsl(198 54% 73% / 0.06), transparent 40%),
+      radial-gradient(circle at 50% 80%, hsl(220 10% 76% / 0.05), transparent 38%),
+      linear-gradient(135deg, hsl(222 12% 7%), hsl(220 10% 9%));
     font-family: 'Inter Variable', 'Geist Sans', system-ui, sans-serif;
+    min-height: 100vh;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.25) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.25) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
+    opacity: 0.2;
   }
 }
 
@@ -113,15 +132,15 @@ All colors MUST be HSL.
 
   /* Glass Effect */
   .glass {
-    background: hsl(var(--card) / 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid hsl(var(--border) / 0.2);
+    background: linear-gradient(160deg, hsl(var(--card) / 0.55), hsl(var(--card) / 0.2));
+    backdrop-filter: blur(14px);
+    border: 1px solid hsl(var(--border) / 0.4);
   }
 
   /* Futuristic Border */
   .border-neon {
-    border: 1px solid hsl(var(--primary) / 0.3);
-    box-shadow: inset 0 0 10px hsl(var(--primary) / 0.1);
+    border: 1px solid hsl(var(--primary) / 0.36);
+    box-shadow: inset 0 0 14px hsl(var(--primary) / 0.12);
   }
 
   /* Hover Animations */
@@ -138,6 +157,76 @@ All colors MUST be HSL.
     box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
   }
 
+  .section-shell {
+    @apply relative py-24;
+  }
+
+  .section-shell::after {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--border) / 0.6), transparent);
+    pointer-events: none;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-display font-bold text-gradient mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl border-neon;
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .spline-scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  .spline-scene > div {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .spline-scene iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    overflow: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .spline-scene iframe::-webkit-scrollbar {
+    display: none;
+  }
+
+  .spline-scene canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    overflow: hidden !important;
+  }
+
+  .loader {
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+    border: 2px solid hsl(var(--border));
+    border-top-color: hsl(var(--primary));
+    animation: spin 0.8s linear infinite;
+  }
+
   /* Particle Animation */
   @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -147,6 +236,11 @@ All colors MUST be HSL.
   @keyframes pulse-neon {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
   .float {

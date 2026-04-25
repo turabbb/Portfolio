@@ -64,14 +64,24 @@ const ProjectsSection = () => {
       gradient: 'from-secondary to-primary',
     },
     {
-      title: 'Tehvar',
-      category: 'Event Management',
-      description: 'Comprehensive events management platform enabling seamless event creation, attendee management, ticketing, and real-time event coordination.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
+      title: 'Finviz Consultants',
+      category: 'Visa Consultancy SaaS',
+      description: 'A visa processing consultancy platform with fully automated application workflows, secure document handling, and role-based admin and user portals for end-to-end case management.',
+      technologies: ['Next.js', 'Supabase', 'TypeScript'],
       github: 'https://github.com/turabbb',
-      demo: 'https://github.com/turabbb',
-      image: '/projects/tehvar.PNG',
+      demo: 'https://www.finvizconsultant.com/',
+      image: '/projects/finviz.PNG',
       gradient: 'from-accent to-secondary',
+    },
+    {
+      title: 'Highlinks',
+      category: 'Study Abroad Consultancy',
+      description: 'A modern study abroad consultancy website for program discovery, lead capture, counseling bookings, and streamlined student onboarding.',
+      technologies: ['Next.js', 'Tailwind CSS', 'CMS'],
+      github: 'https://github.com/turabbb',
+      demo: 'https://www.highlinkspk.com/',
+      image: '/projects/highlinks.PNG',
+      gradient: 'from-primary to-secondary',
     },
   ];
 
@@ -99,7 +109,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-muted/20 to-background">
+    <section id="projects" className="section-shell bg-gradient-to-b from-muted/20 to-background">
       <div className="container mx-auto px-8 sm:px-12 lg:px-16 xl:px-24 2xl:px-32 max-w-[95vw]">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -107,11 +117,11 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">
+          <h2 className="section-title">
             Featured Projects
           </h2>
           <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+          <p className="section-subtitle">
             Showcasing innovative solutions across AI, web development, and computer vision. 
             Each project demonstrates technical expertise and creative problem-solving.
           </p>
@@ -133,7 +143,7 @@ const ProjectsSection = () => {
               onMouseLeave={() => setHoveredProject(null)}
             >
               <motion.div
-                className="glass rounded-lg border-neon h-full overflow-hidden relative"
+                className="glass-card h-full overflow-hidden relative"
                 whileHover={{ y: -10, rotateX: 5, rotateY: 5 }}
                 transition={{ duration: 0.3 }}
                 style={{ transformStyle: 'preserve-3d' }}
