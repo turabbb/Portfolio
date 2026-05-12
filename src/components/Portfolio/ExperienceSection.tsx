@@ -10,10 +10,19 @@ const ExperienceSection = () => {
 
   const experiences = [
     {
+      title: 'Associate Software Engineer (ASE)',
+      company: 'Synviz Solutions',
+      duration: 'September 2025 – March 2026',
+      description: 'Designed and implemented production-grade RAG system using Qwen2.5, improving retrieval relevance by ~35%. Developed transformer-based systems (DeBERTa-v3, RoBERTa-large) for text classification and NLU. Built CNN-based vision pipelines (ConvNeXt, DenseNet) for image classification. Architected scalable backend systems with FastAPI and Node.js.',
+      icon: Building2,
+      color: 'text-primary',
+      bgColor: 'bg-primary/10',
+    },
+    {
       title: 'AI/ML Intern',
       company: 'NETSOL Technologies',
-      duration: '2 months',
-      description: 'Worked on enterprise software solutions, contributing to large-scale applications and learning industry best practices.',
+      duration: 'July – Aug 2025',
+      description: 'Built RAG-based financial intelligence system (LangChain, OpenAI) over 5K+ synthetic dataset for personalized savings recommendations. Developed time-series forecasting and investment models using LSTM on 10-year S&P 500 ETF data. Engineered full-stack platform integrating FastAPI and React+TypeScript. Implemented OAuth 2.0 and optimized frontend performance.',
       icon: Building2,
       color: 'text-primary',
       bgColor: 'bg-primary/10',

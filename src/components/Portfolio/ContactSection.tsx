@@ -149,8 +149,8 @@ const ContactSection = () => {
                 className="w-full bg-gradient-primary hover:shadow-neon transition-all duration-300 hover-lift group"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/resume/ALI_TURAB_Resume.pdf';
-                  link.download = 'ALI_TURAB_Resume.pdf';
+                  link.href = '/resume/ALI-TURAB-Resume.pdf';
+                  link.download = 'ALI-TURAB-Resume.pdf';
                   link.click();
                 }}
               >
